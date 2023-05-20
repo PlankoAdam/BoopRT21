@@ -13,7 +13,7 @@ public class Window extends JFrame {
         setSize(800, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JPanel sideMenu = new JPanel(new GridLayout(2, 4));
+        JPanel sideMenu = new JPanel(new GridLayout(1, 4));
         Canvas canvas = new Canvas();
         Logic logic = new Logic(canvas);
         canvas.addMouseListener(logic);
@@ -25,13 +25,14 @@ public class Window extends JFrame {
         JButton treeBtn = new JButton("Tree");
         JButton moveBtn = new JButton("Move");
         JButton colorBtn = new JButton("Next color");
+
         treeBtn.addActionListener(logic);
         moveBtn.addActionListener(logic);
         colorBtn.addActionListener(logic);
+
         sideMenu.add(treeBtn);
         sideMenu.add(moveBtn);
         sideMenu.add(colorBtn);
-        sideMenu.add(logic.getColorLabel());
         sideMenu.add(logic.getModeLabel());
 
         setResizable(false);

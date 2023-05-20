@@ -21,8 +21,6 @@ public class Logic extends UniversalAdapter{
     private Tree currentTree;
     private Mode mode;
     @Getter
-    private JLabel colorLabel;
-    @Getter
     private JLabel modeLabel;
 
     public Logic(Canvas canvas) {
@@ -34,14 +32,13 @@ public class Logic extends UniversalAdapter{
         color = colorIterator.next();
         this.canvas = canvas;
         mode = Mode.DRAW;
-        colorLabel = new JLabel();
         modeLabel = new JLabel();
         updateLabels();
     }
 
     public void updateLabels() {
-        colorLabel.setText("Color: " + color.getValue());
         modeLabel.setText(String.valueOf(mode));
+        modeLabel.setForeground(color.getKey());
     }
 
     @Override
