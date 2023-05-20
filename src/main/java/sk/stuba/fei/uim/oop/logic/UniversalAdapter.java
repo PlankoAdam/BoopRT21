@@ -2,7 +2,7 @@ package sk.stuba.fei.uim.oop.logic;
 
 import java.awt.event.*;
 
-public class UniversalAdapter implements KeyListener, MouseListener, MouseMotionListener {
+public class UniversalAdapter implements KeyListener, MouseListener, MouseMotionListener, ActionListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -50,6 +50,11 @@ public class UniversalAdapter implements KeyListener, MouseListener, MouseMotion
 
     @Override
     public void mouseMoved(MouseEvent e) {
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
     }
 }

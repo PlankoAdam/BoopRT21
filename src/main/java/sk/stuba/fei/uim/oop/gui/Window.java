@@ -13,25 +13,26 @@ public class Window extends JFrame {
         setSize(800, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        JPanel sideMenu = new JPanel(new GridLayout(1, 4));
+        JPanel sideMenu = new JPanel(new GridLayout(2, 4));
         Canvas canvas = new Canvas();
-
-        add(canvas, BorderLayout.CENTER);
-        add(sideMenu, BorderLayout.PAGE_END);
-
         Logic logic = new Logic(canvas);
         canvas.addMouseListener(logic);
         canvas.addMouseMotionListener(logic);
 
-        JButton treeBtn = new JButton("Strom");
-        JButton moveBtn = new JButton("Presun");
-        JButton colorBtn = new JButton("Dalsia farba");
-        JLabel colorLabel = new JLabel("Color: " + logic.getColor());
+        add(canvas, BorderLayout.CENTER);
+        add(sideMenu, BorderLayout.PAGE_END);
+
+        JButton treeBtn = new JButton("Tree");
+        JButton moveBtn = new JButton("Move");
+        JButton colorBtn = new JButton("Next color");
+        treeBtn.addActionListener(logic);
+        moveBtn.addActionListener(logic);
+        colorBtn.addActionListener(logic);
         sideMenu.add(treeBtn);
         sideMenu.add(moveBtn);
         sideMenu.add(colorBtn);
-        sideMenu.add(colorLabel);
-
+        sideMenu.add(logic.getColorLabel());
+        sideMenu.add(logic.getModeLabel());
 
         setResizable(false);
         setVisible(true);

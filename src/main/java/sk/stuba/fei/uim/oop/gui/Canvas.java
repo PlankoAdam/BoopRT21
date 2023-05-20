@@ -1,6 +1,7 @@
 package sk.stuba.fei.uim.oop.gui;
 
-import sk.stuba.fei.uim.oop.tree.Tree;
+import lombok.Getter;
+import sk.stuba.fei.uim.oop.shapes.Tree;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,12 +10,12 @@ import java.util.List;
 
 public class Canvas extends JPanel {
 
+    @Getter
     private final List<Tree> trees;
 
     public Canvas() {
 
         trees = new ArrayList<>();
-        setBorder(BorderFactory.createLineBorder(Color.RED));
     }
 
     public void addTree(Tree tree) {
