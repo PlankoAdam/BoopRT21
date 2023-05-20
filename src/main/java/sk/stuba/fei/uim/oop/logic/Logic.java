@@ -8,20 +8,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
-import java.util.*;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Logic extends UniversalAdapter{
 
     private final Canvas canvas;
-    @Getter
     private Map.Entry<Color, String> color;
-    private HashMap<Color, String> colors;
+    private final HashMap<Color, String> colors;
     private Iterator<Map.Entry<Color, String>> colorIterator;
     private Tree currentTree;
     private Mode mode;
     @Getter
-    private JLabel modeLabel;
+    private final JLabel modeLabel;
 
     public Logic(Canvas canvas) {
         colors = new HashMap<>();

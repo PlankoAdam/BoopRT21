@@ -43,9 +43,9 @@ public class Tree {
             ellipse.setFrame(x, y, width, (double) (2 * height) /3);
             rectangle.setRect(x + (double) width /3, y + (double) height /3, (double) width /3, (double) (2 * height) /3);
         } else if (width < 0 && height >= 0) {
-            ellipse.setFrame(x + width, y, Math.abs(width), 2*height/3);
+            ellipse.setFrame(x + width, y, Math.abs(width), (double) (2 * height) /3);
             rectangle.setRect(x + (double) Math.abs(width) /3 + width, y + (double) height /3, (double) Math.abs(width) /3, (double) (2 * height) /3);
-        } else if (width >= 0 && height < 0) {
+        } else if (width >= 0) {
             ellipse.setFrame(x, y + height,width, (double) (2 * Math.abs(height)) /3);
             rectangle.setRect(x + (double) width /3, y + (double) Math.abs(height) /3 + height, (double) width /3, (double) (2 * Math.abs(height)) /3);
         } else {
